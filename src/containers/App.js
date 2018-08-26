@@ -4,7 +4,7 @@ import SearchBox from '../components/SearchBox';
 import { API_KEY } from '../constants/API';
 
 import axios from 'axios';
-
+import ArticleList from '../components/ArticleList';
 
 class App extends Component {
   state = {
@@ -23,9 +23,9 @@ class App extends Component {
     event.preventDefault();
     this.setState({news: []});
     // this.setState({loading: true});
-    // const keywords = this.state.keywords;
+    // const keywords = this.state.searchfield;
     // const topHeadlines = `https://newsapi.org/v2/top-headlines?country=uk&apiKey=${API_KEY}`;
-    // const topic = `${PROXY}https://newsapi.org/v2/everything?q=${this.state.keywords}&apiKey=${API_KEY}`;
+    // const topic = `${PROXY}https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}`;
     const topic = `https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}`;
 
     axios.get(topic)
@@ -48,13 +48,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+    <section className="mw9 center avenir">
+      <h2 className="baskerville fw1 ph3 ph0-l">News</h2>
+      <div className="tc">
+
         <SearchBox 
           searchChange={this.onSearchChange} 
           getNews={this.getNews}
           />
-        
+
+        <ArticleList news={this.state.news} />
+
       </div>
+    </section>
+    
     );
   }
 }
