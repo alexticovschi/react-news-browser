@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import SearchBox from '../components/SearchBox';
 import { API_KEY } from '../constants/API';
+import { Route, Switch } from 'react-router-dom';
 
 import axios from 'axios';
 import ArticleList from '../components/ArticleList';
+// import SideDrawer from '../components/SideDrawer';
+import MenuAppBar from '../components/MenuAppBar';
+import TestComponent from '../components/TestComponent';
 
 class App extends Component {
   state = {
     news: [],
+    topheadlines: [],
     searchfield: ''
   }
 
@@ -48,20 +52,27 @@ class App extends Component {
 
   render() {
     return (
-    <section className="mw9 center avenir">
-      <h2 className="baskerville fw1 ph3 ph0-l">News</h2>
-      <div className="tc">
+      <div> 
+        
+        <MenuAppBar style={{ position:'relative', display: 'block'}}/>
 
-        <SearchBox 
-          searchChange={this.onSearchChange} 
-          getNews={this.getNews}
-          />
-
-        <ArticleList news={this.state.news} />
+        <Switch>
+          <Route exact path="/" render={() => {
+                  return <ArticleList 
+                            news={this.state.news} 
+                            onSearchChange={this.onSearchChange}
+                            getNews={this.getNews} />
+                  }} 
+                /> 
+          <Route exact path="/headlines" render={() => {
+                  return <TestComponent />
+                  }} 
+                /> 
+        </Switch>
 
       </div>
-    </section>
-    
+
+      
     );
   }
 }

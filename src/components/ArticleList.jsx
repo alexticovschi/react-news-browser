@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Article from './Article';
 
-const ArticleList = ({ news }) => {
-    const cardComponent = news.map((news, i) => (
+import SearchBox from './SearchBox';
+const ArticleList = ({ news, onSearchChange, getNews }) => {
+    const article = news.map((news, i) => (
         <Article 
             key={i}
             id={news.id} 
@@ -16,9 +17,17 @@ const ArticleList = ({ news }) => {
             />
     ));
     return (
-        <div>
-            {cardComponent}
-        </div>
+        <Fragment>
+            <SearchBox 
+                searchChange={onSearchChange} 
+                getNews={getNews}
+                />
+            <section className="mw8 center avenir">
+                <div className="tc">
+                    {article}
+                </div>
+            </section>
+        </Fragment>
     )
 }
 
