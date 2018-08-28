@@ -94,7 +94,7 @@ class MenuAppBar extends React.Component {
         <MenuList>
             <MenuItem component={Link} to="/">Home</MenuItem>
             <Divider/>
-            <MenuItem component={Link} to="/headlines">Top Headlines</MenuItem>
+            <MenuItem component={Link} to="/news-sources">News Sources</MenuItem>
             <Divider/>
             <MenuItem>Entertainment</MenuItem>
             <Divider/>
@@ -145,7 +145,7 @@ class MenuAppBar extends React.Component {
               textColor="primary"
             >
               <Tab component={Link} to="/" classes={{ root: classes.tabRoot }} label="Home" />
-              <Tab component={Link} to="/headlines" classes={{ root: classes.tabRoot }} label="Headlines" />
+              <Tab component={Link} to="/news-sources" classes={{ root: classes.tabRoot }} label="News Sources" />
               {/* <Tab classes={{ root: classes.tabRoot }} label="Entertainment" />
               <Tab classes={{ root: classes.tabRoot }} label="General" />
               <Tab classes={{ root: classes.tabRoot }} label="Sports" />

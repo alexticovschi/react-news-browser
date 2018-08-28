@@ -18,7 +18,9 @@ const ArticleList = ({ news, onSearchChange, getNews }) => {
     ));
     return (
         <Fragment>
+            <h1 style={{marginTop:"0px"}}>.</h1>
             <SearchBox 
+                style={{marginTop:"60px"}}
                 searchChange={onSearchChange} 
                 getNews={getNews}
                 />

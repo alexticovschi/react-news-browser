@@ -5,7 +5,6 @@ const SearchBox = ({ getNews, searchChange }) => {
         <div className="pa4-l black-80 tc">
             <form className="bg-lightest-blue mw8 center pa4 br2-ns ba b--black-10">
             <fieldset className="cf bn ma0 pa0">
-                <legend className="pa0 f5 f4-ns mt10 mb5 black-80"></legend>
                 <div className="cf">
                 <label className="clip">Search</label>
                 <input 

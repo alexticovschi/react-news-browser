@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import { API_KEY } from '../constants/API';
 import { Route, Switch } from 'react-router-dom';
@@ -7,14 +7,21 @@ import axios from 'axios';
 import ArticleList from '../components/ArticleList';
 // import SideDrawer from '../components/SideDrawer';
 import MenuAppBar from '../components/MenuAppBar';
-import TestComponent from '../components/TestComponent';
+import Sources from '../components/Sources';
 
 class App extends Component {
   state = {
+    searchfield: '',
     news: [],
     topheadlines: [],
-    searchfield: ''
+    sources: [],
   }
+
+  componentDidMount() {
+    this.getNewsCategory();
+    this.getSource();
+  }
+
 
   onSearchChange = (event) => {
     event.preventDefault();
@@ -26,8 +33,6 @@ class App extends Component {
   getNews = (event) => {
     event.preventDefault();
     this.setState({news: []});
-    // this.setState({loading: true});
-    // const keywords = this.state.searchfield;
     // const topHeadlines = `https://newsapi.org/v2/top-headlines?country=uk&apiKey=${API_KEY}`;
     // const topic = `${PROXY}https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}`;
     const topic = `https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}`;
@@ -50,11 +55,55 @@ class App extends Component {
     });
   }
 
-  render() {
-    return (
-      <div> 
+  getSource = () => {
+    axios.get(`https://newsapi.org/v2/sources?apiKey=${API_KEY}`)
+      .then(response => {
+          const fetchedSources = [];
+          //console.log(response.data.articles);
+          
+          response.data.sources.map(source => fetchedSources.push(source));
+          this.setState({sources: fetchedSources});
+          
+          console.log('[STATE SOURCES]:',this.state.sources);
+    })
+    .catch(error => {
+        console.log(error);
+    }); 
+  }
+
+  getNewsCategory = () => {
+    axios.get(`https://newsapi.org/v2/sources?apiKey=${API_KEY}`)
+      .then(response => {
+        const entertainmentSources = [],
+              generalSources = [],
+              sportsSources = [],
+              technologySources = [];
+
+        //console.log(response.data.articles);
+        response.data.sources.forEach(source => {
+            if (source.category === 'general') generalSources.push(source);
+            else if (source.category === 'entertainment') entertainmentSources.push(source);
+            else if (source.category === 'sports') sportsSources.push(source);
+            else if (source.category === 'technology') technologySources.push(source);
+        });        
         
-        <MenuAppBar style={{ position:'relative', display: 'block'}}/>
+        this.setState({
+          entertainment: entertainmentSources,
+          general: generalSources,
+          sports: sportsSources,
+          technology: technologySources
+        });
+    })
+    .catch(error => {
+        console.log(error);
+    }); 
+  }
+
+  render() {
+    console.log(this.state)
+    return (
+      <Fragment> 
+        <MenuAppBar />
 
         <Switch>
           <Route exact path="/" render={() => {
@@ -64,15 +113,15 @@ class App extends Component {
                             getNews={this.getNews} />
                   }} 
                 /> 
-          <Route exact path="/headlines" render={() => {
-                  return <TestComponent />
+          <Route exact path="/news-sources" render={() => {
+                  return <Sources 
+                            sources={this.state.sources} />
                   }} 
                 /> 
+          {/* <Route path="/:news_source" component={ HeadLines } /> */}
+
         </Switch>
-
-      </div>
-
-      
+      </Fragment>
     );
   }
 }
