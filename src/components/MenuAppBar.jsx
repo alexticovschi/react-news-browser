@@ -96,13 +96,13 @@ class MenuAppBar extends React.Component {
             <Divider/>
             <MenuItem component={Link} to="/news-sources">News Sources</MenuItem>
             <Divider/>
-            <MenuItem>Entertainment</MenuItem>
+            <MenuItem component={Link} to="/entertainment">Entertainment</MenuItem>
             <Divider/>
-            <MenuItem>General</MenuItem>
+            <MenuItem component={Link} to="/general">General</MenuItem>
             <Divider/>
-            <MenuItem>Sports</MenuItem>
+            <MenuItem component={Link} to="/sports">Sports</MenuItem>
             <Divider/>
-            <MenuItem>Technology</MenuItem>
+            <MenuItem component={Link} to="/technology">Technology</MenuItem>
             <Divider/>
         </MenuList>
       </div>

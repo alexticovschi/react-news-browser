@@ -8,6 +8,7 @@ import ArticleList from '../components/ArticleList';
 // import SideDrawer from '../components/SideDrawer';
 import MenuAppBar from '../components/MenuAppBar';
 import Sources from '../components/Sources';
+import NewsCategories from '../components/NewsCategories';
 import Headlines from './Headlines';
 
 class App extends Component {
@@ -127,17 +128,42 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" render={() => {
-                  return <ArticleList 
-                            news={this.state.news} 
-                            onSearchChange={this.onSearchChange}
-                            getNews={this.getNews} />
-                  }} 
-                /> 
+            return <ArticleList 
+                      news={this.state.news} 
+                      onSearchChange={this.onSearchChange}
+                      getNews={this.getNews} />
+            }} 
+          /> 
           <Route exact path="/news-sources" render={() => {
-                  return <Sources 
-                            sources={this.state.sources} />
-                  }} 
-                /> 
+            return <Sources 
+                      sources={this.state.sources} />
+            }} 
+          /> 
+
+          <Route exact path="/entertainment" render={() => {
+            return <NewsCategories 
+                      sources={this.state.entertainment} />
+            }} 
+          /> 
+
+          <Route exact path="/general" render={() => {
+            return <NewsCategories 
+                      sources={this.state.general} />
+            }} 
+          />
+
+          <Route exact path="/sports" render={() => {
+            return <NewsCategories 
+                      sources={this.state.sports} />
+            }} 
+          />  
+
+          <Route exact path="/technology" render={() => {
+            return <NewsCategories 
+                      sources={this.state.technology} />
+            }} 
+          />  
+
           <Route path="/:news_source" component={ Headlines } />
 
         </Switch>
