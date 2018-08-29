@@ -8,6 +8,7 @@ import ArticleList from '../components/ArticleList';
 // import SideDrawer from '../components/SideDrawer';
 import MenuAppBar from '../components/MenuAppBar';
 import Sources from '../components/Sources';
+import Headlines from './Headlines';
 
 class App extends Component {
   state = {
@@ -20,6 +21,8 @@ class App extends Component {
   componentDidMount() {
     this.getNewsCategory();
     this.getSource();
+    this.getTopHeadlines();
+
   }
 
 
@@ -99,6 +102,23 @@ class App extends Component {
     }); 
   }
 
+  getTopHeadlines = () => {
+    const topHeadlines = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+
+    axios.get(topHeadlines)
+        .then(response => {
+            const fetchedNews = [];
+            console.log(response.data.articles);
+          
+            response.data.articles.map(article => fetchedNews.push(article));
+            this.setState({topheadlines: fetchedNews});            
+            console.log('[STATE TOPHEADLINES]:',this.state.topheadlines);
+    })
+    .catch(error => {
+        console.log(error);
+    });   
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -118,7 +138,7 @@ class App extends Component {
                             sources={this.state.sources} />
                   }} 
                 /> 
-          {/* <Route path="/:news_source" component={ HeadLines } /> */}
+          <Route path="/:news_source" component={ Headlines } />
 
         </Switch>
       </Fragment>
