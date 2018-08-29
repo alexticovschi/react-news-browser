@@ -4,20 +4,28 @@ import SourceLink from './SourceLink';
 const Sources = (props) => {
         console.log('[SOURCE PROPS]:', props.sources.name);
         return (
-            <div className="tc">
+            <div className="mw9 center ph3-ns">
+                <div className="cf ph2-ns">
+                    
                 <h1 style={{marginTop:"0px"}}>.</h1>
-                <h1 style={{marginTop:"40px"}}>News Sources</h1>
+                <h1 className="tc" style={{marginTop:"100px"}}>News Sources</h1>
 
-                <ul style={{listStyleType:"none",marginTop:"20px"}}>
+                <ul>
                     {props.sources.map((source, i) => (
-                        <SourceLink
-                            key={i}
-                            sourceId={source.id}
-                            sourceName={source.name}
-                        />
+                        <div key={i} className="fl w-100 w-third-ns pa2">
+                            <div className="bg-animate hover-bg-lightest-blue outline bg-white pv4 tc" >
+                                <SourceLink
+                                    sourceId={source.id}
+                                    sourceName={source.name}
+                                />
+                            </div>
+                        </div>
                     ))}
                 </ul>
-            </div> 
+                        
+                </div>
+            </div>
+            
         )      
 }
 
