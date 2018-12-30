@@ -44,3 +44,7 @@ input {
     display: none !important;
   }
 }
+
+.f6.w-100.link.dim.ph3.pv3.mb2.dib.white.bg-black:hover {
+  cursor: pointer !important;
+}

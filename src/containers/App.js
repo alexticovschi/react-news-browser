@@ -17,6 +17,8 @@ class App extends Component {
     news: [],
     topheadlines: [],
     sources: [],
+    displayLoadMoreBtn: false,
+    page: 2
   }
 
   componentDidMount() {
@@ -50,7 +52,7 @@ class App extends Component {
             this.setState({news: fetchedNews});
 
   
-            // this.setState({loading: false});
+            this.setState({displayLoadMoreBtn: true});
             
             console.log('[STATE NEWS]:',this.state.news);
     })
@@ -120,6 +122,38 @@ class App extends Component {
     });   
   }
 
+  loadMore = () => {
+    
+    // const resp = await fetch(
+    // `https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}&page=${this.state.page}`
+    // );
+    const topic = `https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}&page=${this.state.page}`;
+
+    axios.get(topic)
+        .then(response => {
+            const fetchedNews = [];
+            console.log(response.data.articles);
+            
+            response.data.articles.map(article => fetchedNews.push(article));
+            let count = this.state.page + 1;
+            this.setState({ page: count });
+
+            const new_list = [...this.state.news, ...fetchedNews];
+            this.setState({news: new_list});
+
+  
+            // this.setState({loading: false});
+            
+            console.log('[STATE NEWS]:',this.state.news);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+    
+    
+}
+
   render() {
     console.log(this.state)
     return (
@@ -131,7 +165,9 @@ class App extends Component {
             return <ArticleList 
                       news={this.state.news} 
                       onSearchChange={this.onSearchChange}
-                      getNews={this.getNews} />
+                      getNews={this.getNews} 
+                      loadMore={this.loadMore} 
+                      displayLoadMoreBtn={this.state.displayLoadMoreBtn} />
             }} 
           /> 
           <Route exact path="/news-sources" render={() => {
@@ -166,6 +202,9 @@ class App extends Component {
 
           <Route path="/:news_source" component={ Headlines } />
 
+          <button className="btn loadmore" onClick={this.loadMore}>
+                        Load More
+                        </button>
         </Switch>
       </Fragment>
     );
