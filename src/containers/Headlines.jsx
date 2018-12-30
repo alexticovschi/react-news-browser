@@ -44,7 +44,7 @@ class HeadLines extends Component {
     return (
       <Fragment>
         <h1 style={{marginTop:"0px"}}>.</h1>
-        <h1 className="tc" style={{marginTop:"100px"}}>{this.state.sourceName}</h1>
+        <h2 className="tc" style={{marginTop:"100px"}}>{this.state.sourceName}</h2>
         {this.state.headlines.map((article, i) => (
           <div key={i}>
             <section className="mw8 center avenir">

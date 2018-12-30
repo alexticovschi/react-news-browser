@@ -7,7 +7,7 @@ const NewsCategories = (props) => {
             <div className="mw9 center ph3-ns">
                 <div className="cf ph2-ns">
                     <h1 style={{marginTop:"0px"}}>.</h1>
-                    <h1 className="tc" style={{marginTop:"100px"}}>Select a News Source to get Top headlines</h1>
+                    <h3 className="tc" style={{marginTop:"100px"}}>Select a News Source to get Top headlines</h3>
                     <ul>
                         {props.sources.map((source, i) => (
                             <div key={i} className="fl w-100 w-third-ns pa2">

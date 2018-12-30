@@ -136,7 +136,7 @@ class MenuAppBar extends React.Component {
               color="inherit"
               className={classes.flex}
             >
-              News Browser
+              NewsBrowser
             </Typography>
             <Tabs
               value={value}
@@ -144,8 +144,8 @@ class MenuAppBar extends React.Component {
               indicatorColor="primary"
               textColor="primary"
             >
-              <Tab component={Link} to="/" classes={{ root: classes.tabRoot }} label="Home" />
-              <Tab component={Link} to="/news-sources" classes={{ root: classes.tabRoot }} label="News Sources" />
+              <Tab className="tab-link" component={Link} to="/" classes={{ root: classes.tabRoot }} label="Home" />
+              <Tab className="tab-link" component={Link} to="/news-sources" classes={{ root: classes.tabRoot }} label="News Sources" />
               {/* <Tab classes={{ root: classes.tabRoot }} label="Entertainment" />
               <Tab classes={{ root: classes.tabRoot }} label="General" />
               <Tab classes={{ root: classes.tabRoot }} label="Sports" />
