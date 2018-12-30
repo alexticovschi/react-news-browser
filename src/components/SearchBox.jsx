@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBox = ({ getNews, searchChange }) => {
     return (
         <div className="pa4-l black-80 tc center">
-            <form className="mw7 center pa2 black-80">
+            <form className="mw7 center pa2 black-80" onSubmit={(e) => e.preventDefault()}>
             <fieldset className="cf bn ma0 pa0">
                 <div className="cf">
                 <label className="clip">Search</label>

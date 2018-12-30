@@ -1,3 +1,15 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -47,4 +59,16 @@ input {
 
 .f6.w-100.link.dim.ph3.pv3.mb2.dib.white.bg-black:hover {
   cursor: pointer !important;
+}
+
+footer.pv4.ph2.tc-l {
+  height: 100px;
+  background-color: rgb(241, 242, 243);
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }

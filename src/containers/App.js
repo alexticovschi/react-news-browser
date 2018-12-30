@@ -9,6 +9,7 @@ import ArticleList from '../components/ArticleList';
 import MenuAppBar from '../components/MenuAppBar';
 import Sources from '../components/Sources';
 import NewsCategories from '../components/NewsCategories';
+import Footer from '../components/Footer';
 import Headlines from './Headlines';
 
 class App extends Component {
@@ -25,7 +26,6 @@ class App extends Component {
     this.getNewsCategory();
     this.getSource();
     this.getTopHeadlines();
-
   }
 
 
@@ -36,8 +36,7 @@ class App extends Component {
     console.log(this.state.searchfield)
   }
 
-  getNews = (event) => {
-    event.preventDefault();
+  getNews = () => {
     this.setState({news: []});
     // const topHeadlines = `https://newsapi.org/v2/top-headlines?country=uk&apiKey=${API_KEY}`;
     // const topic = `${PROXY}https://newsapi.org/v2/everything?q=${this.state.searchfield}&apiKey=${API_KEY}`;
@@ -202,10 +201,14 @@ class App extends Component {
 
           <Route path="/:news_source" component={ Headlines } />
 
-          <button className="btn loadmore" onClick={this.loadMore}>
-                        Load More
-                        </button>
+          <button 
+            className="btn loadmore" 
+            onClick={this.loadMore}>
+              Load More
+          </button>
         </Switch>
+
+        <Footer/>
       </Fragment>
     );
   }

@@ -8,7 +8,7 @@ const Sources = (props) => {
                 <div className="cf ph2-ns">
                     
                 <h1 style={{marginTop:"0px"}}>.</h1>
-                <h1 className="tc" style={{marginTop:"100px"}}>News Sources</h1>
+                <h2 className="tc" style={{marginTop:"100px"}}>News Sources</h2>
 
                 <ul>
                     {props.sources.map((source, i) => (

@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import Article from './Article';
+import Footer from './Footer';
+
 
 import SearchBox from './SearchBox';
 const ArticleList = ({ news, onSearchChange, getNews, loadMore, displayLoadMoreBtn }) => {
@@ -23,7 +25,7 @@ const ArticleList = ({ news, onSearchChange, getNews, loadMore, displayLoadMoreB
                 style={{marginTop:"60px"}}
                 searchChange={onSearchChange} 
                 getNews={getNews}
-                />
+            />
             <section className="mw8 center avenir">
                 <div className="tc">
                     {article}
@@ -35,7 +37,6 @@ const ArticleList = ({ news, onSearchChange, getNews, loadMore, displayLoadMoreB
                     <a className="f6 w-100 link dim ph3 pv3 mb2 dib white bg-black" onClick={loadMore}>Load More</a>
                 </div>
             ) : null }
-
         </Fragment>
     )
 }
