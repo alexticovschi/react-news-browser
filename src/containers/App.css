@@ -10,33 +10,11 @@ body {
   min-height: 100%;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 a {
   text-decoration: none;
+  color: rgb(71, 71, 71);
 }
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -83,5 +61,5 @@ footer.pv4.ph2.tc-l {
 }
 
 .scroll-up-button:hover {
-  background-color: #222 !important;
+  background-color: rgb(120, 187, 207) !important;
 }
