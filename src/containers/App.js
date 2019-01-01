@@ -11,6 +11,7 @@ import Sources from '../components/Sources';
 import NewsCategories from '../components/NewsCategories';
 import Footer from '../components/Footer';
 import Headlines from './Headlines';
+import ScrollUpButton from "react-scroll-up-button"; 
 
 class App extends Component {
   state = {
@@ -207,6 +208,8 @@ class App extends Component {
               Load More
           </button>
         </Switch>
+
+        <ScrollUpButton ContainerClassName="scroll-up-button"/>
 
         <Footer/>
       </Fragment>

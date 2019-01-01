@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Article from './Article';
-import Footer from './Footer';
 
 
 import SearchBox from './SearchBox';

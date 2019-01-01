@@ -72,3 +72,16 @@ footer.pv4.ph2.tc-l {
   padding: 1rem;
   text-align: center;
 }
+
+.scroll-up-button {
+  transition: .4s !important;
+}
+ 
+.scroll-up-button:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.scroll-up-button:hover {
+  background-color: #222 !important;
+}
