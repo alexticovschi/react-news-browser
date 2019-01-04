@@ -10,6 +10,11 @@ body {
   min-height: 100%;
 }
 
+*:focus {
+  outline: 0 !important;
+}
+
+
 a {
   text-decoration: none;
   color: rgb(71, 71, 71);
@@ -63,3 +68,9 @@ footer.pv4.ph2.tc-l {
 .scroll-up-button:hover {
   background-color: rgb(120, 187, 207) !important;
 }
+
+.SocialMediaShareButton {
+  display: inline-block;
+  margin-top: 15px;
+  margin: 10px 8px;
+} 
