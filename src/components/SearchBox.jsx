@@ -8,7 +8,7 @@ const SearchBox = ({ getNews, searchChange }) => {
                 <div className="cf">
                 <label className="clip">Search</label>
                 <input 
-                    className="ba b--black-20 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" 
+                    className="ba b--black-20 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-85-m w-90-l br2-ns br--left-ns" 
                     placeholder="Search for news" 
                     type="search" 
                     onChange={searchChange}

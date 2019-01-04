@@ -13,7 +13,7 @@ const NewsCategories = (props) => {
                         {props.sources.map((source, i) => (
                             <div key={i} className="fl w-100 w-third-ns pa2">
                                 <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true} animationInDelay={160}>
-                                    <div className="bg-animate hover-bg-lightest-blue outline bg-white pv4 tc" >
+                                    <div className="bg-animate hover-bg-lightest-blue outline bg-white pv3 tc" >
                                         <SourceLink
                                             sourceId={source.id}
                                             sourceName={source.name}
