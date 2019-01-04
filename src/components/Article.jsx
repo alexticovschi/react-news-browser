@@ -1,4 +1,5 @@
 import React from 'react';
+import {Animated} from "react-animated-css";
 
 import {
     FacebookShareButton,
@@ -16,6 +17,7 @@ import {
 
 const Article = ({articleTitle, img, description, publishedAt, articlePublisher, sourceName, articleUrl}) => {
     return (
+        <Animated animationIn="fadeInLeft" animationOut="fadeOut" isVisible={true} animationInDelay={200}>
         <article className="bt bb b--black-10">
             <a className="db pv4 ph3 ph0-l no-underline black" href={articleUrl} target="_blank">
                 <div className="flex flex-column flex-row-ns">
@@ -51,6 +53,7 @@ const Article = ({articleTitle, img, description, publishedAt, articlePublisher,
                 </div>
             </a>
         </article>
+        </Animated>
     )
 }
 

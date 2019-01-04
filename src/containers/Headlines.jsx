@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
 import Article from "../components/Article";
+import {Animated} from "react-animated-css";
 
 class HeadLines extends Component {
   state = {
@@ -44,7 +45,10 @@ class HeadLines extends Component {
     return (
       <Fragment>
         <h1 style={{marginTop:"0px"}}>.</h1>
-        <h2 className="tc" style={{marginTop:"100px"}}>{this.state.sourceName}</h2>
+
+        <Animated animationIn="bounceInDown" animationOut="fadeOut" isVisible={true}>
+          <h2 className="tc" style={{marginTop:"100px"}}>{this.state.sourceName}</h2>
+        </Animated>
         {this.state.headlines.map((article, i) => (
           <div key={i}>
             <section className="mw8 center avenir">
