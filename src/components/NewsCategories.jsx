@@ -1,5 +1,6 @@
 import React from 'react';
 import SourceLink from './SourceLink';
+import {Animated} from "react-animated-css";
 
 const NewsCategories = (props) => {
         console.log();
@@ -11,12 +12,14 @@ const NewsCategories = (props) => {
                     <ul>
                         {props.sources.map((source, i) => (
                             <div key={i} className="fl w-100 w-third-ns pa2">
-                                <div className="bg-animate hover-bg-lightest-blue outline bg-white pv4 tc" >
-                                    <SourceLink
-                                        sourceId={source.id}
-                                        sourceName={source.name}
-                                    />
-                                </div>
+                                <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true} animationInDelay={160}>
+                                    <div className="bg-animate hover-bg-lightest-blue outline bg-white pv4 tc" >
+                                        <SourceLink
+                                            sourceId={source.id}
+                                            sourceName={source.name}
+                                        />
+                                    </div>
+                                </Animated>
                             </div>
                         ))}
                     </ul>  
