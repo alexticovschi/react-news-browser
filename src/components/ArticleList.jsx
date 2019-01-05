@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import Article from './Article';
-
-
+import LoadMoreBtn from './LoadMoreBtn';
 import SearchBox from './SearchBox';
+
 const ArticleList = ({ news, onSearchChange, getNews, loadMore, displayLoadMoreBtn }) => {
     const article = news.map((news, i) => (
         <Article 
@@ -32,9 +32,7 @@ const ArticleList = ({ news, onSearchChange, getNews, loadMore, displayLoadMoreB
             </section>
 
             {displayLoadMoreBtn ? (
-                <div className="tc mw8 center mt4 mb3">
-                    <a className="f6 w-100 link dim ph3 pv3 mb2 dib white bg-black" onClick={loadMore}>Load More</a>
-                </div>
+                <LoadMoreBtn loadMore={loadMore}/>
             ) : null }
         </Fragment>
     )

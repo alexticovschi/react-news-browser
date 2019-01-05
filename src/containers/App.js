@@ -9,6 +9,7 @@ import ArticleList from '../components/ArticleList';
 import MenuAppBar from '../components/MenuAppBar';
 import Sources from '../components/Sources';
 import NewsCategories from '../components/NewsCategories';
+import LoadMoreBtn from '../components/LoadMoreBtn';
 import Footer from '../components/Footer';
 import Headlines from './Headlines';
 import ScrollUpButton from "react-scroll-up-button"; 
@@ -202,11 +203,8 @@ class App extends Component {
 
           <Route path="/:news_source" component={ Headlines } />
 
-          <button 
-            className="btn loadmore" 
-            onClick={this.loadMore}>
-              Load More
-          </button>
+          <LoadMoreBtn loadMore={this.loadMore}/>
+          
         </Switch>
 
         <ScrollUpButton ContainerClassName="scroll-up-button"/>
