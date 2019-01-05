@@ -39,20 +39,8 @@ const styles = theme => ({
     minWidth: 2,
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing.unit * 2,
-    // fontFamily: [
-    //   '-apple-system',
-    //   'BlinkMacSystemFont',
-    //   '"Segoe UI"',
-    //   'Roboto',
-    //   '"Helvetica Neue"',
-    //   'Arial',
-    //   'sans-serif',
-    //   '"Apple Color Emoji"',
-    //   '"Segoe UI Emoji"',
-    //   '"Segoe UI Symbol"',
-    // ].join(','),
     '&:hover': {
-      color: '#40a9ff',
+      color: '#000',
       opacity: 1,
     }
   },
@@ -136,7 +124,7 @@ class MenuAppBar extends React.Component {
               color="inherit"
               className={classes.flex}
             >
-              NewsBrowser
+              <a className="logo" href="https://newsapi.org/"><span style={{fontWeight: 800}}>News</span>Browser</a>
             </Typography>
             <Tabs
               value={value}

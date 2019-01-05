@@ -5,11 +5,11 @@ import {Animated} from "react-animated-css";
 const Sources = (props) => {
         console.log('[SOURCE PROPS]:', props.sources.name);
         return (
-            <div className="mw9 center ph3-ns">
+            <div className="mw9 center ph3-ns" style={{marginBottom:"100px"}}>
                 <div className="cf ph2-ns">
                     
                 <h1 style={{marginTop:"0px"}}>.</h1>
-                <h2 className="tc" style={{marginTop:"100px"}}>News Sources</h2>
+                <h2 className="tc" style={{marginTop:"80px"}}>News Sources</h2>
 
                 <ul>
                     {props.sources.map((source, i) => (

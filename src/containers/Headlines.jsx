@@ -44,32 +44,34 @@ class HeadLines extends Component {
     //console.log(this.state.headlines)
     return (
       <Fragment>
-        <h1 style={{marginTop:"0px"}}>.</h1>
+        <div style={{marginBottom:"100px"}}>
+          <h1 style={{marginTop:"0px"}}>.</h1>
 
-        <Animated animationIn="bounceInDown" animationOut="fadeOut" isVisible={true}>
-          <h2 className="tc" style={{marginTop:"100px"}}>{this.state.sourceName}</h2>
-        </Animated>
-        {this.state.headlines.map((article, i) => (
-          <div key={i}>
-            <section className="mw8 center avenir">
-              <div className="tc">
-              <h1 style={{marginTop:"10px"}}>{''}</h1>
-                <Article
-                  style={{marginTop:"160px"}}
-                  
-                  id={article.id}
-                  img={article.urlToImage}
-                  articleTitle={article.title}
-                  description={article.description}
-                  publishedAt={article.publishedAt}
-                  sourceName={article.source.name}
-                  articleUrl={article.url}
-                  articlePublisher={article.publisher}
-                />
-              </div>
-            </section>
-          </div>
-        ))}
+          <Animated animationIn="bounceInDown" animationOut="fadeOut" isVisible={true}>
+            <h2 className="tc" style={{marginTop:"80px"}}>{this.state.sourceName}</h2>
+          </Animated>
+          {this.state.headlines.map((article, i) => (
+            <div key={i}>
+              <section className="mw8 center avenir">
+                <div className="tc">
+                <h1 style={{marginTop:"10px"}}>{''}</h1>
+                  <Article
+                    style={{marginTop:"160px"}}
+                    
+                    id={article.id}
+                    img={article.urlToImage}
+                    articleTitle={article.title}
+                    description={article.description}
+                    publishedAt={article.publishedAt}
+                    sourceName={article.source.name}
+                    articleUrl={article.url}
+                    articlePublisher={article.publisher}
+                  />
+                </div>
+              </section>
+            </div>
+          ))}
+        </div>
       </Fragment>
     );
   }

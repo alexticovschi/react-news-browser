@@ -14,12 +14,18 @@ body {
   outline: 0 !important;
 }
 
-
 a {
   text-decoration: none;
   color: rgb(71, 71, 71);
 }
 
+.logo {
+  transition: .4s;
+}
+
+.logo:hover {
+  color:rgb(0, 0, 0);
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -40,14 +46,21 @@ input {
   }
 }
 
+.f6.w-100.link.dim.ph3.pv3.mb2.dib.white.bg-black {
+  margin-bottom: 80px !important;
+}
+
 .f6.w-100.link.dim.ph3.pv3.mb2.dib.white.bg-black:hover {
   cursor: pointer !important;
 }
 
-footer.pv4.ph2.tc-l {
-  height: 100px;
-  background-color: rgb(241, 242, 243);
+footer {
+  margin-top: 100px !important;
+}
 
+footer.pv4.ph2.tc-l {
+  min-height: 160px;
+  background-color: rgb(241, 242, 243);
   position: absolute;
   right: 0;
   bottom: 0;
