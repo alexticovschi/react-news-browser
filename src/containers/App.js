@@ -164,6 +164,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => {
             return <ArticleList 
+                      topHeadlines={this.state.topheadlines}
                       news={this.state.news} 
                       onSearchChange={this.onSearchChange}
                       getNews={this.getNews} 
