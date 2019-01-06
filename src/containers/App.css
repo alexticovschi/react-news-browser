@@ -27,11 +27,6 @@ a {
   color:rgb(0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .outline.pv4 > div > a {
   text-decoration: none;
 }
@@ -40,18 +35,42 @@ input {
   border: 1px solid grey !important;
 }
 
+.search-btn:hover {
+  background-color: rgb(51, 51, 51) !important;
+}
+
+ul.sources {
+  margin-left: -40px;
+}
+
+.category-name,
+.source-name {
+  font-family: "Helvetica", "Arial";
+  margin-top: 80px;
+  color: rgb(73, 73, 73);
+}
+
 @media (max-width:450px) {
   .tab-link {
     display: none !important;
   }
 }
 
-.f6.w-100.link.dim.ph3.pv3.mb2.dib.white.bg-black {
-  margin-bottom: 80px !important;
+.tc.mw8.center.mt4.mb3 {
+  margin-top: -80px !important;
+  margin-bottom: 90px !important;
+
 }
 
-.f6.w-100.link.dim.ph3.pv3.mb2.dib.white.bg-black:hover {
+.loadmore {
+  border: none;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.loadmore:hover {
   cursor: pointer !important;
+  background-color: rgb(51, 51, 51) !important;
 }
 
 footer {
@@ -69,8 +88,27 @@ footer.pv4.ph2.tc-l {
   text-align: center;
 }
 
+.SocialMediaShareButton {
+  display: inline-block;
+  margin-top: 15px;
+  margin: 10px 8px;
+} 
+
+.topheadlines {
+  margin-bottom: 150px !important;
+}
+
+.headlines {
+  margin-bottom: 150px !important;
+}
+
+.box-sources.mw9.center.ph3-ns {
+  margin-bottom: 150px !important;
+}
+
 .scroll-up-button {
   transition: .4s !important;
+  border-radius: 2px;
 }
  
 .scroll-up-button:focus {
@@ -79,11 +117,42 @@ footer.pv4.ph2.tc-l {
 }
 
 .scroll-up-button:hover {
-  background-color: rgb(120, 187, 207) !important;
+  background-color: rgb(79, 141, 160) !important;
 }
 
-.SocialMediaShareButton {
-  display: inline-block;
-  margin-top: 15px;
-  margin: 10px 8px;
-} 
+
+@media (max-width:450px) {
+  .tc.mw8.center.mt4.mb3 {
+    margin-top: -140px !important;
+    margin-bottom: 130px !important;
+  }
+
+  .category-name,
+  .source-name {
+    margin-top: 60px;
+
+    font-size: 21px;
+  }
+
+  .loadmore {
+    border-radius: 0;
+  }
+
+  h1.spacer {
+    margin-bottom: 30px !important;
+  }
+
+  ul.sources {
+    margin-bottom: 340px !important;
+  }
+
+  .box-sources h2.tc {
+    margin-top: 50px !important;
+  }
+
+  .scroll-up-button {
+    height: 36px !important;
+    width: 43px !important;
+  } 
+
+}

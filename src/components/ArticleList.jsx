@@ -33,7 +33,7 @@ const ArticleList = ({ topHeadlines, hideLoadMoreBtn, news, onSearchChange, getN
 
     return (
         <Fragment>
-            <h1 className="spacer" style={{marginTop:"0px", marginBottom:"60px"}}>.</h1>
+            <h1 className="spacer" style={{marginTop:"0px", marginBottom:"50px"}}>.</h1>
             <SearchBox 
                 hideLoadMoreBtn={hideLoadMoreBtn}
                 searchChange={onSearchChange} 

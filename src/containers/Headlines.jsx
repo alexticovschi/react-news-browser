@@ -21,7 +21,6 @@ class HeadLines extends Component {
       .get(url)
       .then(response => {
         const fetchedHeadLines = [];
-        //console.log(response.data.articles);
 
         response.data.articles.map(source => fetchedHeadLines.push(source));
         this.setState({ headlines: fetchedHeadLines });
@@ -33,7 +32,6 @@ class HeadLines extends Component {
             this.setState({ sourceName: name + " Top Headlines" });
           }
         });
-        console.log("[HeadLines]:", this.state.headlines);
       })
       .catch(error => {
         console.log(error);
@@ -41,23 +39,20 @@ class HeadLines extends Component {
   };
 
   render() {
-    //console.log(this.state.headlines)
     return (
       <Fragment>
-        <div style={{marginBottom:"100px"}}>
+        <div className="headlines">
           <h1 style={{marginTop:"0px"}}>.</h1>
 
           <Animated animationIn="bounceInDown" animationOut="fadeOut" isVisible={true}>
-            <h2 className="tc" style={{marginTop:"80px"}}>{this.state.sourceName}</h2>
+            <h2 className="source-name tc">{this.state.sourceName}</h2>
           </Animated>
+          
           {this.state.headlines.map((article, i) => (
             <div key={i}>
               <section className="mw8 center avenir">
                 <div className="tc">
-                <h1 style={{marginTop:"10px"}}>{''}</h1>
-                  <Article
-                    style={{marginTop:"160px"}}
-                    
+                  <Article                    
                     id={article.id}
                     img={article.urlToImage}
                     articleTitle={article.title}

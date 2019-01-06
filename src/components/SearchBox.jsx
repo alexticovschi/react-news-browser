@@ -17,7 +17,7 @@ const SearchBox = ({ getNews, searchChange }) => {
                             // onKeyUp={getNews}
                         />
                         <input 
-                            className="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-15-m w-10-l br2-ns br--right-ns" 
+                            className="search-btn f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black white pointer w-100 w-15-m w-10-l br2-ns br--right-ns" 
                             type="submit" 
                             value="Search"
                             onClick={getNews}
